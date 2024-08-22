@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+  <title>Pappers-api</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link href="/css//bootswatch-sketchy.min.css" rel="stylesheet">
+  <link href="/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container-fluid" style="text-align: center; padding-right: 30px; padding-left: 30px;">
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card border-danger">
+          <div class="card-header">
+            <h4>PAPPERS-API</h4>
+          </div>
+          <div class="card-body">
+
+            <label class="col-sm-3 col-form-label-lg">RECHERCHE PAR SIREN - SIRET</label> <br>
+            <br>
+
+            <div class="row">
+              <form th:action="@{/search}">
+                <label>Exemple de Siren : 417680618</label><br>
+                <input type="text" th:name="siren" />
+                <input type="submit" value="Rechercher par Siren - Siret" />
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer th:replace="fragments/footer.html :: footer"></footer>
+</body>
+
+</html>

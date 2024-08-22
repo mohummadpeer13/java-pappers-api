@@ -25,4 +25,4 @@ This project is deploy on a VM using Kubernetes
  - Push Docker Image on Dockerhub.
  - Deploy project using Kubernetes
 
- - Link project => http://peermohummad.ddns.net:30190/
+ - Link project => http://peermohummad.ddns.net:30110/

@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+  <title>Hello</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link href="/css//bootswatch-sketchy.min.css" rel="stylesheet">
+  <link href="/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <div>
+        <div class="container-fluid" style="text-align: center; padding-right: 30px; padding-left: 30px;">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card border-danger">
+                        <div class="card-header">
+                            <h4>PAPPERS-API</h4>
+                        </div>
+                        <div class="card-body">
+
+                            <label class="col-sm-3 col-form-label-lg">RESULTAT DE VOTRE
+                                RECHERCHE</label> <br><br>
+
+                            <div class="row" style="border-style: solid;">
+                                <label class="col-sm-12 col-form-label-lg"
+                                    th:text="${society.nom_entreprise} + '       RCS : ' + ${society.siren}"
+                                    style="text-align: center;"></label>
+                                <label class="col-sm-12 col-form-label-lg" th:text="${society.siege.adresse_ligne_1}"
+                                    style="text-align: center;"></label>
+                                <label class="col-sm-12 col-form-label-lg"
+                                    th:text="${society.siege.code_postal} + ' ' + ${society.siege.ville}"
+                                    style="text-align: center;"></label>
+                            </div>
+                            <div class="row">
+                                <label class="col-sm-12 col-form-label-lg"
+                                    th:text="'Activité : ' + ${society.siege.code_naf} + ' ' + ${society.siege.libelle_code_naf}"
+                                    style="text-align: center;"></label>
+                                <label class="col-sm-12 col-form-label-lg"
+                                    th:text="'Date de création : ' + ${society.siege.date_de_creation}"
+                                    style="text-align: center;"></label>
+                                <label class="col-sm-12 col-form-label-lg"
+                                    th:text="'Forme juridique : ' + ${society.forme_juridique}"
+                                    style="text-align: center;"></label>
+                                <label class="col-sm-12 col-form-label-lg"
+                                    th:text="'Capital social : ' + ${society.capital_formate}"
+                                    style="text-align: center;"></label>
+
+                                <label class="col-sm-12 col-form-label-lg"
+                                    th:text="'Dirigeant : ' + ${society.representants[0].qualite} + ' ' + ${society.representants[0].denomination}"
+                                    style="text-align: center;"></label>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <footer th:replace="fragments/footer.html :: footer"></footer>
+    </div>
+</body>
+
+</html>
